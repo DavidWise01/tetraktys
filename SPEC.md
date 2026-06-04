@@ -76,6 +76,29 @@ The 5-cell "finite signal speed" was the leading edge of **diffusion**; a genuin
 
 ![two-source interference on the 2-D wave lattice](img/interference.png)
 
+## Going nuclear — the native engine
+
+`python sim/nuclear.py` folds both scaling fixes into the **native** dynamics — second-order (inertial) cells, plus the long-range **external lead** (the two `1` leads) — and the emergence becomes native, robust, and richer.
+
+**Native ballistic light-cone.** Inertia makes propagation ballistic by default — arrival **t ∝ d** (t/d ≈ 1.2, constant), not diffusion. Left (blue) diffuses to a thin plume (front ∝ √t); right (gold) opens a straight-edged cone (front ∝ t):
+
+![diffusion vs ballistic light-cone, space-time](img/lightcone.png)
+
+**Robust sync at any scale** — the external lead (all-to-all) holds the whole lattice locked where the bare ring had collapsed:
+
+| N | 5 | 50 | 200 | 500 |
+|---|---|---|---|---|
+| R (external lead) | 0.999 | 0.997 | 0.997 | 0.997 |
+
+**Hysteresis — inertia's own emergent signature.** Sweep the coupling up, then down: the synced state survives to far lower K than it formed at — a discontinuous (first-order) transition the over-damped model cannot show.
+
+| K | 1.0 | 2.0 | 3.0 | 4.0 | 5.0 |
+|---|---|---|---|---|---|
+| R (up) | 0.07 | 0.15 | 0.22 | 0.42 | 0.52 |
+| R (down) | 0.07 | **0.75** | **0.80** | **0.81** | 0.82 |
+
+max gap **ΔR ≈ 0.61** at K ≈ 2.25. Emergent bistability — pure inertia.
+
 ## The seam (kept visible)
 
 - **Real & measured:** quaternion algebra (SU(2)/spin), Kuramoto phase-lock, a finite lattice signal speed.

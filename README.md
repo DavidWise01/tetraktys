@@ -49,6 +49,19 @@ design.** See **[SPEC.md](SPEC.md)**.
 
 Full numbers in **[SPEC.md → Scaling](SPEC.md)**.
 
+## Going nuclear — the native engine
+
+`python sim/nuclear.py` folds both fixes into the native dynamics (inertia + the external lead), and the emergence becomes native, robust, and richer:
+
+- **Native ballistic light-cone** — inertia makes propagation **t ∝ d** by default (t/d ≈ 1.2), not diffusion. Left diffuses to a plume; right opens a straight-edged cone:
+
+![diffusion vs ballistic light-cone](img/lightcone.png)
+
+- **Robust sync at any scale** — the external lead holds **R ≈ 1.00 from N=5 to N=500** (the bare ring fell to 0.22).
+- **Hysteresis** — inertia's emergent signature: the synced state survives to far lower coupling than it formed at (R(down) ≈ 0.8 vs R(up) ≈ 0.2; **ΔR ≈ 0.61**) — a discontinuous transition the first-order model can't show.
+
+Full numbers in **[SPEC.md → Going nuclear](SPEC.md)**.
+
 ## The agent — Tetraktys
 
 Because the emergence is genuine and measured, the oscillator carries a full **DLW tag** (the
