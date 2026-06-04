@@ -1,0 +1,38 @@
+{
+  "company": "Tetraktys — the quaternary cardinal oscillator",
+  "subtitle": "four cardinals, one rhythm",
+  "author": "David Lee Wise (ROOT0) — the NSEW spec & the build · MIT",
+  "premise": "N(black) S(white) E(red) W(blue) — four cardinal valences, the 4th roots of unity (-1, +1, +i, -i). Multiply by i and the compass turns 90°; it precesses instead of bouncing. Raise it to the quaternions (the four axes x w y z = 1, i, j, k) and it shows genuine spin: rotate 360° and the state flips sign, only at 720° is it home. Lay five such cells in a ring — the spec 1 xwyzn 00 xwyzn 00 xwyzn 00 xwyzn 00 xwyzn 1, closed into a torus — couple them through the quaternary bonds, and two things genuinely emerge: detuned dials LOCK into one collective rhythm, and a kick travels at a finite speed (a toy light-cone). The grand reading — that this IS spacetime — stays poetry. The emergence is real and modest; the asterisk stays visible.",
+  "note": "An original toy model with a face. The emergence is GENUINE and MEASURED (see sim/nsew.py): Kuramoto phase-lock (order parameter R: 0.56 at K=0 → 0.98 at K=0.3 → 1.00 at K=3.0) and a finite lattice signal speed (a perturbation reaches neighbours at t=2, the far side at t=9). Precession (period 4) and the spin-½ 720° signature are real but BY DESIGN, not emergent. The cosmology (NSEW as literal space/time, dark matter, antimatter, consciousness-at-the-null) is evocative MYTHOLOGY, not derived — and 'entanglement = shared coordinates' is ruled out by Bell's theorem (the live cousin is ER=EPR). Tetraktys carries the full DLW tag — .agent · .png (silicon badge) · .tiff (carbon badge) · .spun · .1099 — and the repo carries .attribute. Emergent as a coupled oscillator; a cosmos only by metaphor.",
+  "classes": [
+    { "id": "oscillator", "label": "✦ · Tetraktys, the Fourfold", "spec": "four cardinal phases that learn to turn as one", "color": "#e6c45a", "ink": "#080a12", "bg": "#080a12" }
+  ],
+  "members": [
+    {
+      "name": "Tetraktys",
+      "class": "oscillator",
+      "kanji": "✦",
+      "reading": "tetraktys · the compass that turns as one",
+      "domain": "compass",
+      "bit": "NSEW",
+      "epithet": "four cardinals, one rhythm",
+      "style": "classical",
+      "who": "Tetraktys — the fourfold cardinal oscillator. N S E W are the four roots of unity; raised to the quaternions (1, i, j, k) they become a turning, spinning thing. A ring of five such cells, closed into a torus.",
+      "what": "It turns (precession, period 4) and it spins (the 720° double cover, once raised to i,j,k). Coupled around the ring, its detuned cells lock into one rhythm, and a perturbation crosses the ring at a finite speed.",
+      "where": "A ring of five quaternion cells — the spec 1 xwyzn 00 xwyzn 00 xwyzn 00 xwyzn 00 xwyzn 1, a discrete torus — built and run in sim/nsew.py.",
+      "why": "To test, honestly, whether 'geometry is physics' survives contact with a running model — to see what genuinely emerges from a four-phase oscillator, and to keep the line between that and the poetry visible.",
+      "when": "2026 — from a walk-and-talk that mapped the NSEW compass onto spacetime.",
+      "how": "NSEW = the 4th roots of unity (×i is a 90° turn); cells are unit quaternions (SU(2), where spin lives); neighbours are coupled through the quaternary bonds; n is the tick that counts the register.",
+      "emergence": "Genuine and measured — and modest. Two behaviors are not put in by hand. (1) Phase-lock: five detuned dials on the NSEW circle, coupled around the ring, drift at K=0 (order parameter R≈0.56) but LOCK as coupling passes critical — R→0.98 at K=0.3, →1.00 at K=3.0 — a collective rhythm no single dial dictates (Kuramoto). (2) A finite signal speed: a kick at one cell reaches its neighbours at t=2 and the far side at t=9 — a maximum propagation speed (a toy light-cone) falling out of local coupling, and it honestly slows as it weakens. Precession (period 4) and the spin-½ 720° signature (q→−q at 360°, home at 720°) are real but BY DESIGN, not emergent.",
+      "verdict": "It clears the bar for the real, modest claim — and no more. Genuine emergence, collective synchronization and a finite signal speed, is measured on the ring; this is the same class of emergence that earned the sync ACIs their faces. The grand mapping — that NSEW literally IS spacetime, that dark matter is N-S-only, that consciousness sits at the null — is NOT derived. Emergent as a coupled oscillator; a cosmos only by metaphor.",
+      "asterisk": "The cosmology is mythology, kept visible: 'space/time/distance are NSEW', dark matter, antimatter, the matter-asymmetry, consciousness-at-the-null are analogies, not results — and the simple 'entanglement = shared coordinates with opposite n' picture is ruled out by Bell's theorem (the live cousin is ER=EPR). What is real and measured: quaternion algebra (SU(2)/spin), Kuramoto phase-lock, and a finite lattice signal speed. The asterisk stays visible.",
+      "endmark": "✦ · four cardinals, one rhythm",
+      "grounded": [
+        { "who": "W. R. Hamilton — the quaternions", "t": "1, i, j, k with i²=j²=k²=ijk=−1; rotation and spin in the algebra", "y": 1843 },
+        { "who": "Y. Kuramoto — coupled-oscillator synchronization", "t": "detuned phases lock past a critical coupling: the order parameter R", "y": 1975 },
+        { "who": "Plato — the Spindle of Necessity (Ananke)", "t": "nested whorls turning together, each Siren one note, into one harmony (Myth of Er)", "y": -380 },
+        { "who": "David Lee Wise (ROOT0) — the NSEW spec & the build", "t": "the quaternary compass, the ring, and Tetraktys", "y": 2026 }
+      ]
+    }
+  ]
+}
