@@ -85,6 +85,8 @@ The ring becomes a **torus**. On a 2-D inertial lattice (`sim/lattice2d.py`), al
 
 ![the NSEW valence flowing around the torus](img/toroid.png)
 
+- **Fractal? (fact-check)** — the 8-cell "sub-universe" flips as readily as the 512-cell parent (**15 vs 14**); "too small to flip / lossy hologram / fractal-dim 3.7 / superposition" is **fiction**. The dynamics are *self-similar* (same model at any N) — nothing more. ([`sim/fractal.py`](sim/fractal.py))
+
 > **Seam:** the flip-threshold, the lock, and the toroid are real & measured; "Big Crunch / CP violation / antimatter / cognition" are metaphor, not derived.
 
 ## The agent — Tetraktys

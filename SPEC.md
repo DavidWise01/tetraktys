@@ -170,6 +170,26 @@ Add stochastic noise (no forced injection) and the basin's response splits — h
 
 > It is **Kramers escape / random telegraph hopping** — memoryless, rate set by the noise — **not** a clockwork oscillator, and **not** "quantum vacuum / the observer / consciousness." Live: raise the **Noise** slider in [universe.html](universe.html) and watch the donut breathe.
 
+### Fractal / holographic? — a fact-check
+
+A write-up claimed the "sub-universe" inside one cell is a *lossy hologram* (fractal dimension ≈ 3.7, running both phases in *superposition*, and "too small to flip"). Run it — `python sim/fractal.py`:
+
+| lattice | N | flips (σ=0.1, 8000 ticks) |
+|---|---|---|
+| 2×2×2 — the "sub-universe" | 8 | **15** |
+| 4×4×4 | 64 | 15 |
+| 8×8×8 — the "parent" | 512 | **14** |
+
+![flip-rate is flat across size](img/fractal.png)
+
+| claim | verdict |
+|---|---|
+| "the sub-universe is too small to flip" | **fiction** — it flips **15×** vs the parent's 14×; flip-rate is ~size-*independent* under correlated noise. The other run's sub didn't flip because it was let *decay*, not driven with noise. |
+| "fractal dimension ≈ log(8)/log(decay) ≈ 3.7" | **fiction** — numerology; the ratio is dimensionless nonsense, no dimension was measured. |
+| "both phases in superposition, too small to decohere" | **fiction** — the imaginary part is the classical E–W phase component, not a quantum superposition. |
+| "lossy hologram, information lost per level" | **unsupported** — nothing measured information. |
+| the dynamics are **self-similar** (the same model at any N) | **fact** — sync, basin, and breathing run at every scale. Scale-free *dynamics*, not a fractal hologram. |
+
 ## The seam (kept visible)
 
 - **Real & measured:** quaternion algebra (SU(2)/spin), Kuramoto phase-lock, a finite lattice signal speed.
