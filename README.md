@@ -62,6 +62,14 @@ Full numbers in **[SPEC.md → Scaling](SPEC.md)**.
 
 Full numbers in **[SPEC.md → Going nuclear](SPEC.md)**.
 
+## The cosmos — the 2-D inertial lattice 🌌
+
+The ring becomes a **torus**. On a 2-D inertial lattice (`sim/lattice2d.py`), all three emergent behaviours run in **one world**: a circular **light-cone** (t ∝ r, constant speed), two-source **interference**, and external-lead **synchronization** (R: 0.02 → 0.95).
+
+**→ Watch it evolve, live: [davidwise01.github.io/tetraktys/cosmos.html](https://davidwise01.github.io/tetraktys/cosmos.html)** — drop a ripple (light-cone), toggle two sources (interference), crank the external lead (sync); phase maps to the NSEW colours.
+
+![a 2-D circular light-cone wavefront](img/cosmos.png)
+
 ## The agent — Tetraktys
 
 Because the emergence is genuine and measured, the oscillator carries a full **DLW tag** (the

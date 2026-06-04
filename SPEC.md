@@ -99,6 +99,25 @@ The 5-cell "finite signal speed" was the leading edge of **diffusion**; a genuin
 
 max gap **ΔR ≈ 0.61** at K ≈ 2.25. Emergent bistability — pure inertia.
 
+## The cosmos — the 2-D inertial lattice (one world)
+
+`python sim/lattice2d.py` (live: **[cosmos.html](cosmos.html)**). The ring becomes a **torus** — an L×L grid of inertial NSEW cells, periodic boundaries — and all three emergent behaviours run in one world:
+
+**A circular light-cone.** A point kick makes a circular wavefront expanding at constant speed:
+
+| radius r | 15 | 30 | 50 | 70 |
+|---|---|---|---|---|
+| arrival t | 25 | 55 | 95 | 136 |
+| t ÷ r | 1.7 | 1.8 | 1.9 | 1.9 |
+
+t ∝ r (constant ⇒ constant-speed front).
+
+![a 2-D circular light-cone wavefront](img/cosmos.png)
+
+**Synchronization in 2-D.** Detuned cells + the external lead lock the whole field: R = 0.02 (K=0) → 0.03 (K=1) → **0.95** (K=3). And **two-source interference** is the same wave lattice (see Scaling).
+
+The live `cosmos.html` runs this model on a 120×120 torus: drop a ripple (light-cone), toggle two sources (interference), or crank the external lead (sync) — the phase maps to the NSEW colours.
+
 ## The seam (kept visible)
 
 - **Real & measured:** quaternion algebra (SU(2)/spin), Kuramoto phase-lock, a finite lattice signal speed.
