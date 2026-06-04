@@ -126,7 +126,7 @@ A clean reading of the whole project — and an honest one:
 - **2-D — software.** This engine, simulating that hardware's dynamics.
 - **3-D — the test loop.** Using the 2-D sim to predict what the 1-D hardware would do — model → test → build, the way SPICE precedes the soldering iron.
 
-`python sim/universe.py` runs the three injections on an 8×8×8 toroidal NSEW lattice (the visualised slice of the 8⁴ register), to n=4096.
+`python sim/universe.py` runs the three injections on an 8×8×8 toroidal NSEW lattice (the visualised slice of the 8⁴ register), to n=4096. **Live & interactive: [universe.html](universe.html)** — set an N-charge dose, inject, and watch the flip tip (or spring back) on a spinning donut.
 
 **Forced flip — threshold-gated (the basin of attraction).** Dump N-charge Q at n=3000:
 
