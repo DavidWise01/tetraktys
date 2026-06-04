@@ -79,6 +79,9 @@ The ring becomes a **torus**. On a 2-D inertial lattice (`sim/lattice2d.py`), al
 - **Forced flip is threshold-gated** — the +1 (S) phase is a genuine attractor; N-doses up to Q=4 are pulled back, only Q≥5 flips the majority S→N (**basin of attraction**, Q_crit ∈ (4,5)). Forced, not spontaneous.
 - **Coherence lock holds ≈1.0 throughout** (including across the flip — honest: I did *not* reproduce the earlier write-up's post-flip collapse).
 - **The toroid** — valence flows around the ring, no singularity.
+- **Breathing** — add *correlated* noise (a shared fluctuation) and the lattice spontaneously flips S↔N (Kramers hopping, rate rising with noise: 14→55→114→230); *per-cell* noise just dissolves the wells. Live: the **Noise** slider in [universe.html](https://davidwise01.github.io/tetraktys/universe.html).
+
+![Mx breathing between the wells under correlated noise](img/breath.png)
 
 ![the NSEW valence flowing around the torus](img/toroid.png)
 

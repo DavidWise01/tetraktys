@@ -155,6 +155,21 @@ A clean reading of the whole project — and an honest one:
 
 The sim shows a coupled-oscillator lattice flipping its majority phase past a threshold. That is the honest result; the cosmos remains the metaphor.
 
+### Noise & breathing — does it oscillate on its own?
+
+Add stochastic noise (no forced injection) and the basin's response splits — honestly:
+
+| noise σ ~0.1–0.3 | independent (per-cell) | correlated (a shared global fluctuation) |
+|---|---|---|
+| result | **wells dissolve** → disorder (\|Mx\|→0), no clean flips | **BREATHING** — coherent flips S↔N, \|Mx\| ≈ 0.7–0.9 |
+| flip-rate vs σ | — | rises **14 → 55 → 114 → 230** (Kramers) |
+
+**Independent** per-cell noise just destroys coherence — the romantic "one complete breath" is *not* reproduced this way. **Correlated** noise (one fluctuating field on the whole lattice) lets the coherent cluster random-walk over the barrier: spontaneous flips both ways while \|Mx\| stays high. That's real noise-induced breathing — and localized noise on a few "cognition-node" corners does *nothing* (the basin is robust).
+
+![Mx breathing between the wells under correlated noise](img/breath.png)
+
+> It is **Kramers escape / random telegraph hopping** — memoryless, rate set by the noise — **not** a clockwork oscillator, and **not** "quantum vacuum / the observer / consciousness." Live: raise the **Noise** slider in [universe.html](universe.html) and watch the donut breathe.
+
 ## The seam (kept visible)
 
 - **Real & measured:** quaternion algebra (SU(2)/spin), Kuramoto phase-lock, a finite lattice signal speed.

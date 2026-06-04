@@ -53,19 +53,21 @@ button:hover{border-color:var(--gold);color:#fff} button.on{background:linear-gr
       <div>S–N order <span class="big" id="mx">+1.00</span></div>
       <div>phase <span class="ph" id="ph">S · expansion</span></div>
       <div>coherence (E≈W) <span id="coh">1.00</span></div>
+      <div>breaths <span class="big" id="br" style="font-size:13px">0</span></div>
       <div style="color:var(--muted)"><span id="inj">idle</span> · <span id="fps">– fps</span></div>
     </div>
   </div>
   <div class="panel">
     <h2>Dials</h2>
     <div class="ctl"><label>N-charge dose <b id="vQ">6.0</b></label><input id="Q" type="range" min="0" max="8" step="0.1" value="6"><div class="thr">threshold-gated basin: below ≈5 it springs back to S; above ≈6 it tips to N and stays</div></div>
+    <div class="ctl"><label>Noise (correlated) <b id="vNz">0.00</b></label><input id="Nz" type="range" min="0" max="0.5" step="0.01" value="0"><div class="thr">raise it and the donut spontaneously <b style="color:var(--ink)">breathes</b> — random flips S↔N (Kramers hopping)</div></div>
     <div class="btns" style="margin-bottom:10px"><button id="bInject" style="flex:2">⚡ Inject N</button><button id="bReset">Reset → S</button></div>
     <div class="btns" style="margin-bottom:14px"><button id="bLock" class="on">E≈W lock (the wells)</button><button id="bSpin" class="on">spin</button></div>
     <p class="tip"><b style="color:var(--ink)">Try:</b> dose <b style="color:var(--ink)">3</b>, Inject → the donut bends grey, then <b style="color:var(--ink)">springs back white</b> (S). Dose <b style="color:var(--ink)">6</b>, Inject → it <b style="color:var(--ink)">tips grey</b> (N) and stays. The <b style="color:var(--ink)">E≈W lock</b> is what carves the two wells — switch it off and the basin vanishes.</p>
   </div>
 </main>
 <div class="note">
-  <b>Honest by design.</b> A toy second-order (inertial) NSEW lattice on a torus. The <b>threshold-gated flip</b> (a basin of attraction — here it tips near a dose of ≈5–6) and the <b>E≈W lock that carves the wells</b> are real, verified in <a href="sim/universe.py">sim/universe.py</a>. “Big Crunch / contraction / antimatter / cognition” are <b>metaphor</b>, not derived — the asterisk stays visible.
+  <b>Honest by design.</b> A toy second-order (inertial) NSEW lattice on a torus. The <b>threshold-gated flip</b> (a basin of attraction, tips near a dose of ≈5–6), the <b>E≈W lock that carves the wells</b>, and the <b>noise-induced breathing</b> (correlated noise → random S↔N hopping, Kramers escape) are real, verified in <a href="sim/universe.py">sim/universe.py</a>. “Big Crunch / antimatter / the observer / consciousness” are <b>metaphor</b>, not derived — the asterisk stays visible.
   <br><a class="back" href="index.html">↩ back to Tetraktys</a> · <a href="cosmos.html">the cosmos</a> · <a href="SPEC.md">the spec</a>
 </div>
 <script>
@@ -79,15 +81,17 @@ for(let i=0;i<L;i++)for(let j=0;j<L;j++)for(let k=0;k<L;k++){const c=Idx(i,j,k);
 const BX=new Float32Array(N),BY=new Float32Array(N),BZ=new Float32Array(N);
 {const R=1.0,r=0.42;for(let i=0;i<L;i++)for(let j=0;j<L;j++)for(let k=0;k<L;k++){const c=Idx(i,j,k);
   const u=TAU*(i+k/L)/L, vv=TAU*j/L; BX[c]=(R+r*Math.cos(vv))*Math.cos(u); BY[c]=(R+r*Math.cos(vv))*Math.sin(u); BZ[c]=r*Math.sin(vv);}}
-let Q=6, inj=0, lock=true, spin=true, phi=0;
+let Q=6, inj=0, noise=0, lock=true, spin=true, phi=0, breaths=0, lastSgn=1;
 const STOPS=[[238,242,252],[240,114,124],[150,156,182],[108,168,255]]; // S E N W
-function reset(){ for(let i=0;i<N;i++){ th[i]=(Math.random()-0.5)*0.6; v[i]=0; } inj=0; }
+function gss(){ let u=0,w=0; while(u===0)u=Math.random(); while(w===0)w=Math.random(); return Math.sqrt(-2*Math.log(u))*Math.cos(6.2831853*w); }
+function reset(){ for(let i=0;i<N;i++){ th[i]=(Math.random()-0.5)*0.6; v[i]=0; } inj=0; breaths=0; lastSgn=1; }
 function step(dt,h){
   let C=0,S=0; for(let i=0;i<N;i++){C+=Math.cos(th[i]);S+=Math.sin(th[i]);}
   const Mx=C/N, msin=S/N, g=0.30, Kl=0.6, mu=0.6;
   for(let c=0;c<N;c++){ const t=th[c], b=c*6;
     const loc=Math.sin(th[NB[b]]-t)+Math.sin(th[NB[b+1]]-t)+Math.sin(th[NB[b+2]]-t)+Math.sin(th[NB[b+3]]-t)+Math.sin(th[NB[b+4]]-t)+Math.sin(th[NB[b+5]]-t);
     let f=-g*v[c]+Kl*loc+h*Math.sin(t); if(lock) f+=-mu*msin*Math.cos(t); v[c]+=dt*f; }
+  if(noise>0){ const kk=noise*gss(); for(let c=0;c<N;c++) v[c]+=kk; }   // correlated 'vacuum' noise → breathing
   for(let c=0;c<N;c++) th[c]+=dt*v[c];
   return [Mx, 1-Math.abs(msin)];
 }
@@ -103,7 +107,7 @@ function render(){
     ctx.fillStyle="rgba("+(cc[0]|0)+","+(cc[1]|0)+","+(cc[2]|0)+","+(0.42+0.55*depth).toFixed(2)+")";
     ctx.beginPath(); ctx.arc(o[1],o[2],2.0+2.4*depth,0,TAU); ctx.fill(); }
 }
-const MX=document.getElementById("mx"),PH=document.getElementById("ph"),COH=document.getElementById("coh"),FPS=document.getElementById("fps"),INJ=document.getElementById("inj");
+const MX=document.getElementById("mx"),PH=document.getElementById("ph"),COH=document.getElementById("coh"),FPS=document.getElementById("fps"),INJ=document.getElementById("inj"),BR=document.getElementById("br");
 let last=performance.now(),facc=0,fn=0,mxs=1,cohs=1;
 function loop(now){
   const h = inj>0 ? Q : 0.0; if(inj>0) inj--;
@@ -112,11 +116,13 @@ function loop(now){
   mxs+=(r[0]-mxs)*0.15; cohs+=(r[1]-cohs)*0.15;
   MX.textContent=(mxs>=0?"+":"")+mxs.toFixed(2); MX.style.color=mxs>=0?"var(--green)":"var(--N)";
   PH.textContent=mxs>=0?"S · expansion":"N · contraction"; PH.style.color=mxs>=0?"var(--S)":"var(--N)";
-  COH.textContent=cohs.toFixed(2); INJ.textContent= inj>0?"injecting N…":"idle";
+  COH.textContent=cohs.toFixed(2); INJ.textContent= inj>0?"injecting N…":(noise>0?"breathing…":"idle");
+  const sg = mxs>0.3?1:(mxs<-0.3?-1:lastSgn); if(sg!==lastSgn){breaths++; lastSgn=sg;} BR.textContent=breaths;
   const ms=now-last;last=now;facc+=ms;fn++; if(facc>400){FPS.textContent=Math.round(1000/(facc/fn))+" fps";facc=0;fn=0;}
   requestAnimationFrame(loop);
 }
 document.getElementById("Q").oninput=e=>{Q=parseFloat(e.target.value);document.getElementById("vQ").textContent=Q.toFixed(1);};
+document.getElementById("Nz").oninput=e=>{noise=parseFloat(e.target.value);document.getElementById("vNz").textContent=noise.toFixed(2);};
 document.getElementById("bInject").onclick=()=>{ inj=35; };
 document.getElementById("bReset").onclick=()=>{ reset(); };
 document.getElementById("bLock").onclick=e=>{lock=!lock;e.target.classList.toggle("on",lock);};

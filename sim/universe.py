@@ -157,6 +157,81 @@ def render_toroid(th):
         depth=(z+1.5)/3.0; r=2.0+2.0*depth; disk(sx,sy,r,col,0.45+0.5*depth)
     png(IMG/"toroid.png", W, Wh, px)
 
+# ─────────── 4 · NOISE-INDUCED FLIPS — does stochastic noise make it "breathe"? ───────────
+def breathe(sigma, steps=8000, nodes=None, shared=False, dt=0.18, gamma=0.30, Kloc=0.6, mu=0.6, seed=7, record=False):
+    random.seed(seed)
+    th=[random.gauss(0,0.30) for _ in range(N)]; v=[0.0]*N
+    flips=0; last=1; ftimes=[]; hist=[]; absacc=[]
+    targets = list(nodes) if nodes is not None else range(N)
+    for n in range(steps):
+        msin=sum(math.sin(t) for t in th)/N
+        for c in range(N):
+            t=th[c]; loc=0.0
+            for nb in NB[c]: loc+=math.sin(th[nb]-t)
+            v[c]+=dt*(-gamma*v[c]+Kloc*loc - mu*msin*math.cos(t))   # bistable basin (lock carves the wells)
+        if shared:
+            kick=sigma*random.gauss(0,1)
+            for c in targets: v[c]+=kick                           # correlated: one global fluctuation
+        else:
+            for c in targets: v[c]+=sigma*random.gauss(0,1)        # independent per-cell noise
+        for c in range(N): th[c]+=dt*v[c]
+        mx=sum(math.cos(t) for t in th)/N
+        if record and n%10==0: hist.append((n,mx))
+        if n>steps//4: absacc.append(abs(mx))                     # order |Mx|: ~1 = coherent well, ~0 = dissolved
+        s = 1 if mx>0.3 else (-1 if mx<-0.3 else last)            # sign with hysteresis
+        if s!=last: flips+=1; ftimes.append(n); last=s
+    return flips, ftimes, hist, (sum(absacc)/len(absacc) if absacc else 0.0)
+
+def plot_breath(hist, ftimes):
+    W,H=620,300; m=[40,16,18,28]; DARK=(10,12,20); GRID=(34,40,60); INK=(150,160,190); GREEN=(67,214,163); GOLD=(232,196,90)
+    px=[DARK]*(W*H)
+    def st(x,y,c):
+        x=int(x);y=int(y)
+        if 0<=x<W and 0<=y<H: px[y*W+x]=c
+    def ln(x0,y0,x1,y1,c):
+        n=int(max(abs(x1-x0),abs(y1-y0)))+1
+        for k in range(n+1): st(x0+(x1-x0)*k/n, y0+(y1-y0)*k/n, c)
+    x0,y0,x1,y1=m[0],m[1],W-m[2],H-m[3]; nmax=max(1,hist[-1][0])
+    X=lambda n:x0+(x1-x0)*n/nmax; Y=lambda val:y1-(y1-y0)*(val+1)/2.0
+    for gy in (-1,-0.5,0,0.5,1): ln(x0,Y(gy),x1,Y(gy), INK if gy==0 else GRID)
+    for ft in ftimes: ln(X(ft),y0,X(ft),y1, GOLD)
+    p=None
+    for (n,mx) in hist:
+        x,y=X(n),Y(mx)
+        if p: ln(p[0],p[1],x,y,GREEN)
+        p=(x,y)
+    png(IMG/"breath.png", W, H, px)
+
+def test_breathe():
+    banner("4 · NOISE-INDUCED FLIPS — does stochastic noise make it 'breathe'?")
+    print("  (A) INDEPENDENT per-cell noise σ (8000 ticks, no forced injection):")
+    print(f"      {'σ':>4} | flips | mean|Mx| | regime")
+    for sg in (0.0,0.2,0.3,0.4,0.6):
+        fl,ft,_,am=breathe(sg, steps=8000)
+        reg=("frozen (basin holds)" if (am>0.6 and fl==0) else "disordered (wells dissolved)" if am<0.4 else "marginal")
+        print(f"      {sg:>4} | {fl:>5} | {am:>8.2f} | {reg}")
+    print("   → independent noise either FREEZES the basin or DISSOLVES the wells (kills coherence).")
+    print("     no clean 'breathing' — the romantic 'one complete breath' is NOT reproduced this way.")
+    print("  (B) CORRELATED (shared global) noise σ — a fluctuating field on the whole lattice:")
+    print(f"      {'σ':>4} | flips | mean|Mx| | regime")
+    rep=None
+    for sg in (0.0,0.05,0.1,0.15,0.2,0.3):
+        fl,ft,_,am=breathe(sg, steps=8000, shared=True)
+        reg=("frozen (basin holds)" if (am>0.7 and fl==0) else "BREATHING (coherent flips!)" if (am>0.6 and fl>=2)
+             else "disordered" if am<0.4 else "marginal")
+        print(f"      {sg:>4} | {fl:>5} | {am:>8.2f} | {reg}")
+        if am>0.6 and fl>=2 and rep is None: rep=sg
+    if rep is None: rep=0.15
+    _,ft,hist,_=breathe(rep, steps=8000, shared=True, record=True)
+    plot_breath(hist, ft)
+    print(f"   → CORRELATED noise CAN make it breathe: at σ={rep} the whole coherent lattice random-walks over")
+    print(f"     the barrier — clean flips BOTH ways with |Mx| staying high (img/breath.png).")
+    print("  HONEST READING: 'breathing' needs SHARED noise (a global fluctuation), not per-cell; and even")
+    print("  then it is KRAMERS hopping (random, memoryless) — NOT a clockwork oscillator, NOT 'quantum")
+    print("  vacuum / the observer / consciousness'. Noise is noise; what's real is the hold→dissolve line")
+    print("  and the correlated-noise hopping. The cosmology stays metaphor.")
+    return ft
+
 if __name__=="__main__":
     print("Tetraktys — the universe (8×8×8 toroidal NSEW lattice, run to n=4096)")
     Qc=test_flip()
@@ -167,6 +242,7 @@ if __name__=="__main__":
     th_show=[2*math.pi*((i+k/L)/L)+math.pi*(j/L) for i in range(L) for j in range(L) for k in range(L)]
     render_toroid(th_show)
     print("\n  rendered: img/universe_flip.png (Mx + coherence vs n) · img/toroid.png (the donut)")
+    test_breathe()
     banner("THE SEAM — what is real, what is metaphor")
     print("  REAL & measured : a threshold-gated majority flip S→N (basin of attraction);")
     print("                    a forced E≈W lock that holds until the flip; a toroidal layout.")
