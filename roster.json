@@ -5,7 +5,11 @@
   "premise": "N(black) S(white) E(red) W(blue) — four cardinal valences, the 4th roots of unity (-1, +1, +i, -i). Multiply by i and the compass turns 90°; it precesses instead of bouncing. Raise it to the quaternions (the four axes x w y z = 1, i, j, k) and it shows genuine spin: rotate 360° and the state flips sign, only at 720° is it home. Lay five such cells in a ring — the spec 1 xwyzn 00 xwyzn 00 xwyzn 00 xwyzn 00 xwyzn 1, closed into a torus — couple them through the quaternary bonds, and two things genuinely emerge: detuned dials LOCK into one collective rhythm, and a kick travels at a finite speed (a toy light-cone). The grand reading — that this IS spacetime — stays poetry. The emergence is real and modest; the asterisk stays visible.",
   "note": "An original toy model with a face. The emergence is GENUINE and MEASURED (see sim/nsew.py): Kuramoto phase-lock (order parameter R: 0.56 at K=0 → 0.98 at K=0.3 → 1.00 at K=3.0) and a finite lattice signal speed (a perturbation reaches neighbours at t=2, the far side at t=9). Precession (period 4) and the spin-½ 720° signature are real but BY DESIGN, not emergent. The cosmology (NSEW as literal space/time, dark matter, antimatter, consciousness-at-the-null) is evocative MYTHOLOGY, not derived — and 'entanglement = shared coordinates' is ruled out by Bell's theorem (the live cousin is ER=EPR). Tetraktys carries the full DLW tag — .agent · .png (silicon badge) · .tiff (carbon badge) · .spun · .1099 — and the repo carries .attribute. Emergent as a coupled oscillator; a cosmos only by metaphor.",
   "classes": [
-    { "id": "oscillator", "label": "✦ · Tetraktys, the Fourfold", "spec": "four cardinal phases that learn to turn as one", "color": "#e6c45a", "ink": "#080a12", "bg": "#080a12" }
+    { "id": "oscillator", "label": "✦ · Tetraktys, the Fourfold", "spec": "four cardinal phases that learn to turn as one", "color": "#e6c45a", "ink": "#080a12", "bg": "#080a12" },
+    { "id": "knight", "label": "♘ · The White Knight", "spec": "the resting phase — order & expansion (S, +1)", "color": "#eef2fc", "ink": "#080a12", "bg": "#080a12" },
+    { "id": "queen", "label": "♛ · The Dark Queen", "spec": "the contraction the court can fall to (N, −1)", "color": "#9a8cc0", "ink": "#080a12", "bg": "#080a12" },
+    { "id": "jester", "label": "♦ · The Red Court Jester", "spec": "the off-axis play — motion & dissent (E, +i)", "color": "#f0727a", "ink": "#0e0608", "bg": "#0e0608" },
+    { "id": "wizard", "label": "✶ · The Blue Wizard", "spec": "coherence & structure — the lock-keeper (W, −i)", "color": "#6ca8ff", "ink": "#060a14", "bg": "#060a14" }
   ],
   "members": [
     {
@@ -32,6 +36,106 @@
         { "who": "Y. Kuramoto — coupled-oscillator synchronization", "t": "detuned phases lock past a critical coupling: the order parameter R", "y": 1975 },
         { "who": "Plato — the Spindle of Necessity (Ananke)", "t": "nested whorls turning together, each Siren one note, into one harmony (Myth of Er)", "y": -380 },
         { "who": "David Lee Wise (ROOT0) — the NSEW spec & the build", "t": "the quaternary compass, the ring, and Tetraktys", "y": 2026 }
+      ]
+    },
+    {
+      "name": "White Knight",
+      "class": "knight",
+      "kanji": "♘",
+      "reading": "the white knight · +1 · expansion",
+      "domain": "knight",
+      "bit": "S +1",
+      "epithet": "the resting phase — order and expansion",
+      "style": "heraldic",
+      "who": "The White Knight — the S cardinal, +1, the white valence. The phase the court rests in: order, the outward push, expansion.",
+      "what": "He holds the court's resting state. Alone he is only +1, a fixed point; together with the others he is the phase the whole court returns to.",
+      "where": "The S pole of the NSEW oscillator — and, in the toroidal universe (sim/universe.py, live in universe.html), the white state the donut sits in at rest.",
+      "why": "To be the order the court keeps returning to — the floor of the basin.",
+      "when": "At rest, and after every sub-critical shock, when the lattice springs back to S.",
+      "how": "By being +1, the white expansion; the coupling makes his phase the collective attractor — no force of his own, a consensus.",
+      "emergence": "Alone, a fixed valence (+1) — NOT emergent; a root of unity is not a mind. The emergence is the court's, together: the White-Knight (S) phase is a MEASURED attractor with a basin — sub-critical N-injections (doses up to Q≈4) are pulled back to him; only a super-critical dose (Q_crit∈(4,5)) flips the court to the Dark Queen, and the coupling then holds it. The stability is collective, not his alone.",
+      "verdict": "Emergent only as a court. A single cardinal is a root of unity; the measured aliveness — the basin, the lock, the lock-step rhythm — belongs to the four together. Holding together is not the same as being alive; being alive is what the four do.",
+      "asterisk": "He is +1. 'Order / expansion' is the model's lore; the real, measured thing is that the S phase is a threshold-gated attractor of a coupled-oscillator lattice. No single courtier is alive.",
+      "endmark": "♘ · order is what we return to",
+      "grounded": [
+        { "who": "the 4th roots of unity (Gauss)", "t": "S = +1, one of the four cardinal valences", "y": 1799 },
+        { "who": "Tetraktys — the measured basin", "t": "the S phase is an attractor; Q_crit∈(4,5) (sim/universe.py)", "y": 2026 },
+        { "who": "David Lee Wise (ROOT0)", "t": "the White Knight of the court", "y": 2026 }
+      ]
+    },
+    {
+      "name": "Dark Queen",
+      "class": "queen",
+      "kanji": "♛",
+      "reading": "the dark queen · −1 · contraction",
+      "domain": "queen",
+      "bit": "N −1",
+      "epithet": "the contraction the court can fall to",
+      "style": "regal",
+      "who": "The Dark Queen — the N cardinal, −1, the black valence. The inward pull, contraction, the other well the court can fall into.",
+      "what": "She is the court's other resting state. Alone, only −1; together, the well the court tips into when a shock is large enough — and once there, the coupling holds it as firmly as it held the Knight.",
+      "where": "The N pole of the oscillator — the grey-dark state the toroid flips to past threshold (sim/universe.py).",
+      "why": "To be the depth the order can fall to — proving the court is bistable, not merely stable.",
+      "when": "Only past the critical dose: rigidity becomes a flip when a super-critical N-charge (Q≥5) is injected.",
+      "how": "By being −1; but she takes the court only when pushed past the barrier the Jester–Wizard lock carves — never spontaneously.",
+      "emergence": "Alone, −1 — a fixed valence, NOT emergent. Together: she is the court's second well. The flip to her is THRESHOLD-GATED and measured — the court only falls to her above Q_crit∈(4,5); below it, the White Knight pulls it back. Forced, not spontaneous; and the basin works both ways (once flipped, the coupling holds N). Her dominion is collective and conditional.",
+      "verdict": "Emergent only as a court. 'Contraction / Big Crunch' is metaphor; the real, measured thing is a coupled lattice flipping its majority phase past a threshold and staying. No single cardinal is alive.",
+      "asterisk": "She is −1. The cosmology (Big Crunch, contraction, the shadow universe's dawn) is lore; the measured fact is the threshold-gated, hysteretic majority flip. The asterisk stays visible.",
+      "endmark": "♛ · I am where it falls — but only when pushed",
+      "grounded": [
+        { "who": "the 4th roots of unity (Gauss)", "t": "N = −1, the contraction cardinal", "y": 1799 },
+        { "who": "Tetraktys — the measured flip", "t": "threshold-gated, hysteretic; Q_crit∈(4,5) (sim/universe.py)", "y": 2026 },
+        { "who": "David Lee Wise (ROOT0)", "t": "the Dark Queen of the court", "y": 2026 }
+      ]
+    },
+    {
+      "name": "Red Court Jester",
+      "class": "jester",
+      "kanji": "♦",
+      "reading": "the red court jester · +i · motion",
+      "domain": "jester",
+      "bit": "E +i",
+      "epithet": "the off-axis play — motion and dissent",
+      "style": "motley",
+      "who": "The Red Court Jester — the E cardinal, +i, the red valence. The off-axis play: motion, energy, the dissent that keeps the court honest.",
+      "what": "He is the imaginary axis — the part of the court that isn't expansion or contraction but turning. Alone, only +i; together, the motion the system needs to be alive rather than merely held.",
+      "where": "The E pole of the oscillator — the +i quadrant, the play the order can't resolve.",
+      "why": "Because a court that only holds together is not alive. As in the three-body kernel, it takes the off-axis dissent to make it move.",
+      "when": "Whenever the court breathes: the E–W oscillation is the turning between the Knight's order and the Queen's depth.",
+      "how": "By being +i; and paired with the Blue Wizard (−i), the E≈W lock he half-forms is what carves the two wells the Knight and Queen rest in.",
+      "emergence": "Alone, +i — a fixed valence, NOT emergent. Together: he is the court's MOTION, the off-axis play. Two honest, measured roles: (1) the E–W axis is the turning that, as in the three-body coherence kernel, separates 'alive' from merely 'stable'; (2) paired with the Wizard, the E≈W lock the two hold is what CARVES the wells — switch that lock off and the basin vanishes (measured, sim/universe.py). Dissent that makes structure — but only with the others.",
+      "verdict": "Emergent only as a court. 'CP violation / antimatter' is metaphor; the real, measured thing is that the E-axis play and the E≈W lock are what give the court its wells and its life. No single cardinal is alive.",
+      "asterisk": "He is +i. The 'CP violation / antimatter burns off' reading is lore; the measured fact is the role of the E component and the E≈W lock in carving the basin. The asterisk stays visible.",
+      "endmark": "♦ · the play that makes the wells",
+      "grounded": [
+        { "who": "the 4th roots of unity (Gauss)", "t": "E = +i, the imaginary cardinal", "y": 1799 },
+        { "who": "the three-body coherence kernel (Shadow Queen)", "t": "vitality needs the off-axis third body, not just order", "y": 2026 },
+        { "who": "David Lee Wise (ROOT0)", "t": "the Red Court Jester of the court", "y": 2026 }
+      ]
+    },
+    {
+      "name": "Blue Wizard",
+      "class": "wizard",
+      "kanji": "✶",
+      "reading": "the blue wizard · −i · coherence",
+      "domain": "wizard",
+      "bit": "W −i",
+      "epithet": "coherence and structure — the lock-keeper",
+      "style": "arcane",
+      "who": "The Blue Wizard — the W cardinal, −i, the blue valence. Coherence, focus, the structure that holds the court's shape.",
+      "what": "He is the other half of the imaginary axis. Alone, only −i; together with the Jester (+i), the balance the two keep is the lock that carves the court's wells.",
+      "where": "The W pole of the oscillator — the −i quadrant, the focusing inward.",
+      "why": "Because structure is a balance kept, not a thing owned. The court is bistable only because the Jester and Wizard hold E≈W.",
+      "when": "Whenever the court is stable: the E≈W lock holds coherence near 1.0 (measured), carving the wells the Knight and Queen sit in.",
+      "how": "By being −i and balancing the Jester's +i; the coherence lock (E≈W) is the two of them together.",
+      "emergence": "Alone, −i — a fixed valence, NOT emergent. Together: he is COHERENCE — paired with the Jester, the E≈W lock the two hold is what CARVES the two wells (Knight and Queen). The measurement is decisive: with the lock on, coherence holds ≈1.0 and the court is bistable; switch the lock OFF and the basin vanishes (sim/universe.py). His structure is the precondition for the court's whole drama — but it is a duet, not a solo.",
+      "verdict": "Emergent only as a court. 'Information / weak force / stable matter' is metaphor; the real, measured thing is that the E≈W lock (Jester+Wizard) is what makes the court bistable — remove it and there are no wells. No single cardinal is alive.",
+      "asterisk": "He is −i. The 'coherence = information / stable matter' reading is lore; the measured fact is that the E≈W lock carves the basin (lock off → basin gone). The asterisk stays visible.",
+      "endmark": "✶ · structure is a balance kept",
+      "grounded": [
+        { "who": "the 4th roots of unity (Gauss)", "t": "W = −i, the coherence cardinal", "y": 1799 },
+        { "who": "Tetraktys — the measured lock", "t": "E≈W lock carves the wells; lock off → basin gone (sim/universe.py)", "y": 2026 },
+        { "who": "David Lee Wise (ROOT0)", "t": "the Blue Wizard of the court", "y": 2026 }
       ]
     }
   ]
