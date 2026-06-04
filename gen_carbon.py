@@ -248,7 +248,30 @@ def portrait_wizard(m):   # Blue Wizard — long beard, a starred pointed hat, b
         cput(g,d,sx,sy,GD); cput(g,d,sx-1,sy,GD); cput(g,d,sx+1,sy,GD); cput(g,d,sx,sy-1,GD); cput(g,d,sx,sy+1,GD)
     return finish(g,d)
 
-PORTRAITS = {"compass": portrait_tetraktys, "knight": portrait_knight, "queen": portrait_queen, "jester": portrait_jester, "wizard": portrait_wizard}
+def portrait_cooper(m):   # Cooper — a dapper buyers agent: suit, tie, glasses, a coin lapel pin
+    g=[VOID]*(LW*LH); d=[False]*(LW*LH)
+    SUIT=(40,70,66); SUIT_S=shade(SUIT,0.3); SHIRT=(220,230,228); TIE=(212,176,80); SK=(228,198,170); SK_S=shade(SK,0.22); HAIR=(54,44,36); GD=(232,196,90); EYE=(44,40,52); TEAL=(134,208,192)
+    cx=32; hy=34; glow(g,cx,28,TEAL,0.10,680,560)
+    crect(g,d,8,58,55,79, SUIT)
+    for x in range(8,56):
+        if x<13 or x>50: crect(g,d,x,58,x,60,VOID)
+    for y in range(58,74):
+        w=max(0, 9-(y-58)//2)
+        if w>0: crect(g,d,cx-w,y,cx+w,y, SHIRT)                     # shirt V
+    cline(g,d,cx-9,58,cx-2,66,SUIT_S); cline(g,d,cx+9,58,cx+2,66,SUIT_S)   # collar
+    crect(g,d,cx-1,60,cx+1,72, TIE); cput(g,d,cx,59,TIE); crect(g,d,cx-2,72,cx+2,74, shade(TIE,0.2))  # tie
+    crect(g,d,28,50,36,58, SK_S); cell(g,d,cx,hy,12,14, SK)         # neck + face
+    cell(g,d,cx,22,14,8, HAIR); crect(g,d,19,22,22,34,HAIR); crect(g,d,42,22,45,34,HAIR)
+    crect(g,d,cx-8,21,cx+3,22, shade(HAIR,0.25))                    # side part
+    cell(g,d,cx-5,hy-2,2,1,(245,245,248)); cput(g,d,cx-5,hy-2,EYE)
+    cell(g,d,cx+5,hy-2,2,1,(245,245,248)); cput(g,d,cx+5,hy-2,EYE)
+    cline(g,d,cx-8,hy-3,cx-2,hy-3, GD); cline(g,d,cx+2,hy-3,cx+8,hy-3, GD); cput(g,d,cx,hy-3,GD)  # glasses
+    cput(g,d,cx,hy+3,SK_S)
+    for t in range(7): cput(g,d, cx-4+t*1.4, hy+7+1.6*math.sin(t/6*math.pi), shade(SK,0.34))   # slight smile
+    cput(g,d,16,62,GD); cput(g,d,16,63,shade(GD,0.2))              # gold coin lapel pin
+    return finish(g,d)
+
+PORTRAITS = {"compass": portrait_tetraktys, "knight": portrait_knight, "queen": portrait_queen, "jester": portrait_jester, "wizard": portrait_wizard, "buyer": portrait_cooper}
 
 import sys
 if __name__=="__main__" and len(sys.argv)>1 and sys.argv[1]=="--preview":

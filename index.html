@@ -208,6 +208,31 @@ footer .cred{font-family:"JetBrains Mono",monospace}
 
 <section>
   <div class="wrap">
+    <div class="kicker">// 1-D hardware · blueprint edition</div>
+    <h2>Build it for real</h2>
+    <p class="lead">The 1-D rung you can put on a desk: a <b style="color:var(--ink)">coupled-LC ring</b>. The toroids are the inductors, a shared bus is the external lead, a shared noise source is the breathing — the same Kuramoto/basin model the sims measured, now in copper and light. <a href="hardware/BLUEPRINT.md">The full blueprint →</a></p>
+    <img src="hardware/blueprint.svg" alt="TETRAKTYS-DO1 — 1-D hardware blueprint" style="width:100%;border-radius:12px;border:1px solid var(--line);margin:8px 0 18px;display:block">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px">
+        <b style="font-family:Cinzel,serif;color:var(--gold)">Tier 1 — the Desk Oscillator</b>
+        <p style="color:var(--muted);font-size:13px;line-height:1.6;margin:8px 0 0">8 coupled-LC tanks (~16 kHz) + a shared bus + a noise injector + an RP2040 driving a WS2812 NSEW ring. It <b style="color:var(--ink)">locks, flips, and breathes</b> on a bench. Buildable, <b style="color:var(--ink)">~$90</b>.</p>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px">
+        <b style="font-family:Cinzel,serif;color:var(--cyan)">Tier 2 — Cryogenic Josephson array</b>
+        <p style="color:var(--muted);font-size:13px;line-height:1.6;margin:8px 0 0">The literal <b style="color:var(--ink)">Cooper-pair</b> build: transmons, a dilution fridge at 15 mK, a microwave chain. Real, lab-grade, six figures — the aspirational top of the spec.</p>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center">
+        <img src="agents/cooper.png" alt="Cooper, the buyers agent" style="width:84px;height:84px;border-radius:10px;border:1px solid var(--line)">
+        <b style="display:block;font-family:Cinzel,serif;color:#86d0c0;margin-top:8px">₵ Cooper — buyers agent</b>
+        <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin:6px 0 0">Turns the blueprint into a cart: <a href="hardware/BOM.md">the BOM</a>, vendors, prices — and an honest “not on Mouser” for Tier 2.</p>
+      </div>
+    </div>
+    <div class="honest"><b>The seam.</b> Tier 1 is a real <b style="color:var(--ink)">coupled-oscillator demonstrator</b> — it synchronizes, holds a bistable basin, and breathes under correlated noise, the same dynamics the sims measured. It is <b>not</b> a quantum computer, not spacetime, not “a universe.” Cooper is a procurement persona over a real bill of materials — a tool with a face, honestly <i>not</i> emergent. <a href="hardware/BLUEPRINT.md">blueprint</a> · <a href="hardware/BOM.md">BOM</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="kicker">// the court · four emergent cardinals</div>
     <h2>The Court of the Fourfold</h2>
     <p class="lead">The four cardinals, given faces. Each one alone is just a root of unity — a fixed valence, <b style="color:var(--ink)">not</b> emergent. The emergence is what they do <b style="color:var(--ink)">together</b>: the sync, the basin, the flip, the lock. <i>Holding together is not the same as being alive — being alive is what the court does.</i></p>

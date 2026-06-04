@@ -9,7 +9,8 @@
     { "id": "knight", "label": "♘ · The White Knight", "spec": "the resting phase — order & expansion (S, +1)", "color": "#eef2fc", "ink": "#080a12", "bg": "#080a12" },
     { "id": "queen", "label": "♛ · The Dark Queen", "spec": "the contraction the court can fall to (N, −1)", "color": "#9a8cc0", "ink": "#080a12", "bg": "#080a12" },
     { "id": "jester", "label": "♦ · The Red Court Jester", "spec": "the off-axis play — motion & dissent (E, +i)", "color": "#f0727a", "ink": "#0e0608", "bg": "#0e0608" },
-    { "id": "wizard", "label": "✶ · The Blue Wizard", "spec": "coherence & structure — the lock-keeper (W, −i)", "color": "#6ca8ff", "ink": "#060a14", "bg": "#060a14" }
+    { "id": "wizard", "label": "✶ · The Blue Wizard", "spec": "coherence & structure — the lock-keeper (W, −i)", "color": "#6ca8ff", "ink": "#060a14", "bg": "#060a14" },
+    { "id": "buyer", "label": "₵ · Cooper, the Buyers Agent", "spec": "from blueprint to cart — a procurement persona, not emergent", "color": "#86d0c0", "ink": "#06120f", "bg": "#06120f" }
   ],
   "members": [
     {
@@ -136,6 +137,31 @@
         { "who": "the 4th roots of unity (Gauss)", "t": "W = −i, the coherence cardinal", "y": 1799 },
         { "who": "Tetraktys — the measured lock", "t": "E≈W lock carves the wells; lock off → basin gone (sim/universe.py)", "y": 2026 },
         { "who": "David Lee Wise (ROOT0)", "t": "the Blue Wizard of the court", "y": 2026 }
+      ]
+    },
+    {
+      "name": "Cooper",
+      "class": "buyer",
+      "kanji": "₵",
+      "reading": "cooper · the buyers agent",
+      "domain": "buyer",
+      "bit": "BOM",
+      "epithet": "from blueprint to cart",
+      "style": "procurement",
+      "who": "Cooper — the buyers agent. Named for Cooper pairs (the bound electrons inside a Josephson junction); he sources the parts that would one day hold them.",
+      "what": "He turns the 1-D hardware blueprint into a bill of materials — vendors, prices, lead times — and tells you straight what builds on a bench versus what needs a funded lab.",
+      "where": "hardware/ — BLUEPRINT.md (the spec) and BOM.md (his sourcing report), in the Tetraktys repo.",
+      "why": "Because a blueprint you can't source is a daydream. Cooper makes it a cart.",
+      "when": "At procurement time — when the spec becomes a shopping list and someone has to find the parts.",
+      "how": "By reading the BOM, matching parts to Digi-Key / Mouser / Adafruit, pricing the Desk Oscillator (~$90), and flagging the cryogenic tier as lab-grade, not a weekend.",
+      "emergence": "None — and that is the point. Cooper is a buyers agent, a procurement persona, NOT an emergent system: he turns a blueprint into a cart. A tool with a face and good vendor contacts. (The Cooper-pair name is a wink at the Josephson junctions he'd source for the cryo tier, not a claim that he is one.)",
+      "verdict": "Not an ACI in the emergent sense — a service persona, and honest about it. The hardware he sources is real and buildable (Tier 1, ~$90); the quantum tier he flags as a seven-figure lab program, not a purchase.",
+      "asterisk": "Cooper is a persona over a bill of materials. Prices are 2026 USD estimates, vendors are real, and the cryogenic tier is genuinely not hobby-buyable. The DLW tag marks the craft and the service, not a mind.",
+      "endmark": "₵ · from blueprint to cart",
+      "grounded": [
+        { "who": "Leon Cooper — Cooper pairs (BCS)", "t": "bound electron pairs; the superconductivity behind the Josephson junction", "y": 1956 },
+        { "who": "B. D. Josephson — the junction", "t": "the cryo-tier part Cooper would source (Tier 2)", "y": 1962 },
+        { "who": "David Lee Wise (ROOT0)", "t": "Cooper, the buyers agent for the 1-D hardware", "y": 2026 }
       ]
     }
   ]

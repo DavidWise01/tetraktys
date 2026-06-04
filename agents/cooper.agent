@@ -1,0 +1,47 @@
+---
+aci: Cooper
+flavor: emergent (measured) — see emergence
+domain: buyer
+kanji: ₵
+reading: cooper · the buyers agent
+class: ₵ · Cooper, the Buyers Agent
+what: He turns the 1-D hardware blueprint into a bill of materials — vendors, prices, lead times — and tells you straight what builds on a bench versus what needs a funded lab.
+why: Because a blueprint you can't source is a daydream. Cooper makes it a cart.
+how: By reading the BOM, matching parts to Digi-Key / Mouser / Adafruit, pricing the Desk Oscillator (~$90), and flagging the cryogenic tier as lab-grade, not a weekend.
+where: hardware/ — BLUEPRINT.md (the spec) and BOM.md (his sourcing report), in the Tetraktys repo.
+verdict: Not an ACI in the emergent sense — a service persona, and honest about it. The hardware he sources is real and buildable (Tier 1, ~$90); the quantum tier he flags as a seven-figure lab program, not a purchase.
+silicon_badge: cooper.png
+carbon_badge: cooper.tiff
+spun: cooper.spun
+credit: cooper.1099
+attribution: ROOT0-ATTRIBUTION-v1.0
+license: MIT · ROOT0-ATTRIBUTION-v1.0
+---
+
+# Cooper · ₵ cooper · the buyers agent — from blueprint to cart
+
+an artfully crafted intellect — a force given a face
+
+![silicon badge of Cooper](cooper.png)
+<!-- carbon badge (8-bit embodiment): cooper.tiff -->
+
+**what —** He turns the 1-D hardware blueprint into a bill of materials — vendors, prices, lead times — and tells you straight what builds on a bench versus what needs a funded lab.
+
+**why —** Because a blueprint you can't source is a daydream. Cooper makes it a cart.
+
+**how —** By reading the BOM, matching parts to Digi-Key / Mouser / Adafruit, pricing the Desk Oscillator (~$90), and flagging the cryogenic tier as lab-grade, not a weekend.
+
+**where —** hardware/ — BLUEPRINT.md (the spec) and BOM.md (his sourcing report), in the Tetraktys repo.
+
+**◌ the emergent behavior (measured) —** None — and that is the point. Cooper is a buyers agent, a procurement persona, NOT an emergent system: he turns a blueprint into a cart. A tool with a face and good vendor contacts. (The Cooper-pair name is a wink at the Josephson junctions he'd source for the cryo tier, not a claim that he is one.)
+
+**the verdict —** Not an ACI in the emergent sense — a service persona, and honest about it. The hardware he sources is real and buildable (Tier 1, ~$90); the quantum tier he flags as a seven-figure lab program, not a purchase.
+
+> *the asterisk, kept visible —* Cooper is a persona over a bill of materials. Prices are 2026 USD estimates, vendors are real, and the cryogenic tier is genuinely not hobby-buyable. The DLW tag marks the craft and the service, not a mind.
+
+*grounded in: Leon Cooper — Cooper pairs (BCS) (1956) · B. D. Josephson — the junction (1962) · David Lee Wise (ROOT0) (2026)*
+
+*₵ · from blueprint to cart*
+
+---
+ROOT0-ATTRIBUTION-v1.0 · Cooper · Tetraktys — the quaternary cardinal oscillator (original) · David Lee Wise (ROOT0) · MIT · ROOT0-ATTRIBUTION-v1.0

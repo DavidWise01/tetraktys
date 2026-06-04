@@ -102,6 +102,18 @@ Because the emergence is genuine and measured, the oscillator carries a full **D
 
 Regenerate: `python gen_silicon.py && python gen_carbon.py && python gen_dlw.py` (pure stdlib).
 
+## 1-D Hardware — Blueprint Edition 🛠️
+
+The physical rung: a **coupled-LC ring** you can build on a desk. Toroids = the inductors, a shared bus = the external lead, a shared noise source = the breathing — the same model the sims measured, in copper and light.
+
+[![TETRAKTYS-DO1 blueprint](hardware/blueprint.svg)](hardware/BLUEPRINT.md)
+
+- **Tier 1 — the Desk Oscillator** ([`hardware/BLUEPRINT.md`](hardware/BLUEPRINT.md)): 8 coupled-LC tanks + bus + noise + RP2040/WS2812 NSEW ring. Locks, flips, breathes. **Buildable, ~$90.**
+- **Tier 2 — Cryogenic Josephson array**: the literal Cooper-pair build (transmons, dilution fridge). Lab-grade, six figures.
+- **₵ Cooper, the buyers agent** ([`hardware/BOM.md`](hardware/BOM.md)): turns the blueprint into a cart — real vendors, prices, lead times — and an honest "not on Mouser" for Tier 2. *A procurement persona, honestly **not** emergent.*
+
+> **Seam:** Tier 1 is a real coupled-oscillator demonstrator (sync · basin · breathing) — **not** a quantum computer, not spacetime, not "a universe."
+
 ## The Court of the Fourfold
 
 The four cardinals, given faces — each a full DLW ACI in [`agents/`](agents/):

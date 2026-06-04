@@ -202,7 +202,26 @@ def wizard_sigil(m):   # Blue Wizard — W, −i: a starred pointed hat, coheren
     _disk(px, cx, cy+SIZE*0.20, 13, mix(ORB,V,0.4), 0.4); _disk(px, cx, cy+SIZE*0.20, 8, ORB, 0.9); _disk(px, cx, cy+SIZE*0.20, 3, WT, 0.95)
     return px
 
-SIGILS = {"compass": compass_sigil, "knight": knight_sigil, "queen": queen_sigil, "jester": jester_sigil, "wizard": wizard_sigil}
+def buyer_sigil(m):    # Cooper — a Cooper pair (two bonded dots) inside a ring of sourced BOM coins
+    V=(6,16,15); TEAL=(134,208,192); CY=(95,208,230); GD=(232,196,90); WT=(235,250,248); LK=(120,200,210)
+    px=_bg(V,TEAL,0.11); cx=cy=SIZE/2.0
+    R=SIZE*0.34
+    _ring(px, R, mix(TEAL,V,0.4), 0.18, th=1)                      # the cart loop / BOM ring
+    for k in range(10):
+        a=k*(2*math.pi/10)-math.pi/2; x=cx+R*math.cos(a); y=cy+R*math.sin(a)
+        _disk(px,x,y,7,GD,0.9); _disk(px,x,y,3.5, mix(GD,WT,0.4),0.9)   # a line-item coin
+        if k%2==0:                                                  # checkmark = sourced
+            _line(px, x-3,y, x-1,y+3, V, 0.8, th=2); _line(px, x-1,y+3, x+4,y-3, V, 0.8, th=2)
+    dx=SIZE*0.07
+    _disk(px, cx-dx, cy, 16, mix(CY,V,0.5), 0.22); _disk(px, cx+dx, cy, 16, mix(CY,V,0.5), 0.22)   # pair halo
+    _line(px, cx-dx, cy, cx+dx, cy, LK, 0.9, th=3)                 # the bond
+    _disk(px, cx-dx, cy, 9, CY, 0.95); _disk(px, cx-dx, cy, 4, WT, 0.95)
+    _disk(px, cx+dx, cy, 9, CY, 0.95); _disk(px, cx+dx, cy, 4, WT, 0.95)
+    _line(px, cx-SIZE*0.18, cy, cx-dx-10, cy, mix(LK,V,0.4), 0.5, th=1)   # zero-resistance leads
+    _line(px, cx+dx+10, cy, cx+SIZE*0.18, cy, mix(LK,V,0.4), 0.5, th=1)
+    return px
+
+SIGILS = {"compass": compass_sigil, "knight": knight_sigil, "queen": queen_sigil, "jester": jester_sigil, "wizard": wizard_sigil, "buyer": buyer_sigil}
 for m in R["members"]:
     fn = SIGILS.get(m.get("domain"), compass_sigil)
     png(AG/f"{slug(m['name'])}.png", SIZE, SIZE, fn(m))
