@@ -118,6 +118,43 @@ t ∝ r (constant ⇒ constant-speed front).
 
 The live `cosmos.html` runs this model on a 120×120 torus: drop a ripple (light-cone), toggle two sources (interference), or crank the external lead (sync) — the phase maps to the NSEW colours.
 
+## The universe — three levels (1-D hardware · 2-D software · 3-D test)
+
+A clean reading of the whole project — and an honest one:
+
+- **1-D — hardware.** A toroidal inductor + a capacitor is an **LC tank** — a real oscillator. An array of coupled tanks (or Josephson junctions) is a buildable coupled-oscillator lattice; NSEW = the phase quadrants. *(The same Josephson junction as the quantum primer — the arc closes.)*
+- **2-D — software.** This engine, simulating that hardware's dynamics.
+- **3-D — the test loop.** Using the 2-D sim to predict what the 1-D hardware would do — model → test → build, the way SPICE precedes the soldering iron.
+
+`python sim/universe.py` runs the three injections on an 8×8×8 toroidal NSEW lattice (the visualised slice of the 8⁴ register), to n=4096.
+
+**Forced flip — threshold-gated (the basin of attraction).** Dump N-charge Q at n=3000:
+
+| Q | 0–4 | 5 | 6 |
+|---|---|---|---|
+| final Mx | **+1.0** (recovers to S) | **−1.0** (flips to N) | −1.0 |
+
+**Q_crit ∈ (4, 5)** — small N-doses are pulled back; only a super-critical dose flips the majority S→N, and the coupling then holds it. The +1 phase is a genuine **attractor**; the flip is *forced*, not spontaneous.
+
+![Mx (S–N order, green) and coherence (cyan) vs n; flip at n=3000](img/universe_flip.png)
+
+**Coherence lock — an honest divergence.** Forcing E≈W each tick holds the balance at **≈1.0 throughout, including across the flip** (the S–N majority and the E–W balance are independent axes here). I did **not** reproduce the post-flip coherence collapse the earlier write-up reported — this records what the sim does.
+
+**The toroid.** NSEW valence mapped around the torus — the donut topology, valence flowing around the hole, faint antipode links. No singularity, just a ring:
+
+![the NSEW valence flowing around the torus](img/toroid.png)
+
+### The seam, restated honestly
+| claim | status |
+|---|---|
+| a threshold-gated majority flip S→N (Q_crit ∈ (4,5)) | **real, measured** |
+| a forced E≈W lock holding ≈1.0 | **real** (a constraint we impose) |
+| the toroidal layout & antipode links | **real** (a layout / visualisation) |
+| "Big Crunch", "CP violation", "antimatter burns off" | **metaphor** — not derived |
+| "cognition = the regulator", "our universe, 13.8 Gyr" | **metaphor** — not derived |
+
+The sim shows a coupled-oscillator lattice flipping its majority phase past a threshold. That is the honest result; the cosmos remains the metaphor.
+
 ## The seam (kept visible)
 
 - **Real & measured:** quaternion algebra (SU(2)/spin), Kuramoto phase-lock, a finite lattice signal speed.

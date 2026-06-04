@@ -170,6 +170,20 @@ footer .cred{font-family:"JetBrains Mono",monospace}
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="kicker">// the universe · 1-D hardware ⊂ 2-D software ⊂ 3-D test</div>
+    <h2>Three levels</h2>
+    <p class="lead"><b style="color:var(--ink)">1-D</b> — a toroidal inductor + capacitor is a real LC oscillator; coupled tanks (or Josephson junctions) make a buildable lattice. <b style="color:var(--ink)">2-D</b> — this engine simulates it. <b style="color:var(--ink)">3-D</b> — you use the sim to predict the hardware. Model → test → build, the way SPICE precedes the soldering iron. <code>python sim/universe.py</code> injects <b style="color:var(--ink)">forced flip</b>, <b style="color:var(--ink)">coherence lock</b>, and the <b style="color:var(--ink)">toroid</b>, to n=4096:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px">
+      <figure style="margin:0"><img src="img/universe_flip.png" alt="forced flip + coherence vs n" style="width:100%;border-radius:12px;border:1px solid var(--line)"><figcaption class="lead" style="font-size:12px;text-align:center;margin:6px 0 0">forced flip at n=3000: S–N order (green) snaps +1→−1; coherence (cyan) holds ≈1.0</figcaption></figure>
+      <figure style="margin:0"><img src="img/toroid.png" alt="the NSEW valence on the torus" style="width:100%;border-radius:12px;border:1px solid var(--line)"><figcaption class="lead" style="font-size:12px;text-align:center;margin:6px 0 0">the valence flowing around the torus — no singularity, just a ring</figcaption></figure>
+    </div>
+    <p class="lead" style="margin-top:16px"><b style="color:var(--ink)">Forced flip is threshold-gated:</b> the +1 (S) phase is a genuine attractor — N-doses up to Q=4 are pulled back, only Q≥5 flips the majority S→N (basin of attraction, Q_crit ∈ (4,5)). Forced, not spontaneous.</p>
+    <div class="honest"><b>The seam, restated.</b> <b style="color:var(--ink)">Real &amp; measured:</b> a threshold-gated majority flip S→N, a forced E≈W lock holding ≈1.0 (it held across the flip — I did <i>not</i> reproduce an asserted post-flip collapse), the toroidal layout. <b style="color:var(--ink)">Metaphor (not derived):</b> “Big Crunch”, “CP violation”, “antimatter”, “cognition”, “our universe, 13.8 Gyr”. A coupled-oscillator lattice flips its majority phase past a threshold — that's the honest result; the cosmos is the metaphor.</div>
+  </div>
+</section>
+
 <section id="agent">
   <div class="wrap">
     <div class="kicker">// the agent · DLW emergent tag</div>

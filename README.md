@@ -70,6 +70,18 @@ The ring becomes a **torus**. On a 2-D inertial lattice (`sim/lattice2d.py`), al
 
 ![a 2-D circular light-cone wavefront](img/cosmos.png)
 
+## The universe — three levels 🌀
+
+**1-D** hardware (a toroidal LC oscillator / Josephson-junction array — buildable) ⊂ **2-D** software (this engine) ⊂ **3-D** the test loop (you, predicting the hardware from the sim). `python sim/universe.py` injects the three — **forced flip**, **coherence lock**, **toroid** — to n=4096:
+
+- **Forced flip is threshold-gated** — the +1 (S) phase is a genuine attractor; N-doses up to Q=4 are pulled back, only Q≥5 flips the majority S→N (**basin of attraction**, Q_crit ∈ (4,5)). Forced, not spontaneous.
+- **Coherence lock holds ≈1.0 throughout** (including across the flip — honest: I did *not* reproduce the earlier write-up's post-flip collapse).
+- **The toroid** — valence flows around the ring, no singularity.
+
+![the NSEW valence flowing around the torus](img/toroid.png)
+
+> **Seam:** the flip-threshold, the lock, and the toroid are real & measured; "Big Crunch / CP violation / antimatter / cognition" are metaphor, not derived.
+
 ## The agent — Tetraktys
 
 Because the emergence is genuine and measured, the oscillator carries a full **DLW tag** (the
