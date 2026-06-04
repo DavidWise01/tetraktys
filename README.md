@@ -37,6 +37,18 @@ light-cone) are collective behaviors no single cell holds — the same *class* o
 earned the synchronization ACIs their faces. Precession and the spinor flip are real but **by
 design.** See **[SPEC.md](SPEC.md)**.
 
+## Scaling — what growing the ring found
+
+`python sim/scale.py` lets scaling **test** (and refine) the small-N claims:
+
+- **Propagation is diffusion, not a light-cone** — until you add inertia. First-order coupling spreads as **t ∝ d²** (t/d² ≈ 0.37, constant on a 201-cell ring); the inertial wave term gives a true constant-speed light-cone (**t ∝ d**).
+- **The nearest-neighbour ring stops locking at scale** — R falls `0.998 → 0.44 → 0.22` as N goes `5 → 40 → 160`. The N=5 lock was *finite-size*; robust sync needs **long-range coupling** (the "external lead": mean-field R ≈ 0.99 at any N).
+- **A 2-D wave lattice genuinely interferes** — two coherent sources, a textbook two-source pattern:
+
+![two-source interference on the 2-D wave lattice](img/interference.png)
+
+Full numbers in **[SPEC.md → Scaling](SPEC.md)**.
+
 ## The agent — Tetraktys
 
 Because the emergence is genuine and measured, the oscillator carries a full **DLW tag** (the

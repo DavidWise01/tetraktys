@@ -49,6 +49,33 @@ single cell. **By design (1, 2):** the turn and the spinor sign-flip are propert
 algebra. **Measured (5):** rollover is just the counter wrapping; "Big Bang on rollover" is a
 *design choice*, not forced.
 
+## Scaling — what growing the ring found
+
+Run `python sim/scale.py`. Scaling is allowed to **refute** the small-N story — and it sharpens two claims:
+
+**A · The spread is diffusion, not (yet) a light-cone.** On a 201-cell ring, arrival time vs distance:
+
+| coupling | d=5 | d=10 | d=20 | d=40 | scaling law |
+|---|---|---|---|---|---|
+| first-order | 10 | 37 | 148 | 592 | **t ∝ d²** (t/d² ≈ 0.37, constant) — *diffusion* |
+| + inertia (wave term) | 5 | 12 | 25 | 53 | **t ∝ d** (t/d ≈ 1.2, constant) — *a real light-cone* |
+
+The 5-cell "finite signal speed" was the leading edge of **diffusion**; a genuine constant-speed light-cone needs the second-order (inertial) wave term.
+
+**B · The nearest-neighbour ring does not stay locked at scale.** Order parameter R at fixed K = 1.0:
+
+| N | ring (nearest-nbr) | all-to-all (mean-field) |
+|---|---|---|
+| 5 | 0.998 | 0.995 |
+| 40 | 0.438 | 0.991 |
+| 160 | 0.218 | 0.989 |
+
+1-D short-range Kuramoto loses global sync as N grows — the N=5 lock was **finite-size**. Robust synchronization needs **long-range coupling** — exactly the "one external lead" (all-to-all) in the spec.
+
+**C · A 2-D wave lattice genuinely interferes.** Two coherent sources on a 180×180 wave lattice produce a textbook two-source pattern (~18 fringes along a sample row) — nodal and antinodal lines, not a diffusive blob.
+
+![two-source interference on the 2-D wave lattice](img/interference.png)
+
 ## The seam (kept visible)
 
 - **Real & measured:** quaternion algebra (SU(2)/spin), Kuramoto phase-lock, a finite lattice signal speed.
