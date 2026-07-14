@@ -1,0 +1,9 @@
+ROOT0-DLW-CHAIN-v1
+index : 1370
+slug  : tetraktys
+seal  : db868f39a9a06e4dd877e4ad322aa50406156065e2cd1799da4537e6bed80320
+prev  : 7efb49716b5548af2c1175421268e686f8ed721532280ce667c6bcea55aa4ff9
+link  : 0941b3b6f7684f5fbb369516dd5d9d67d43e0f3400191c700a9735b8f8dfe0ce
+head  : 41f029ee4eaa0042c67040dc5927434f8e8446341839c86b6a09d79c5fbf30da
+
+— the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
